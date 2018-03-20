@@ -42,12 +42,9 @@ xmlhttp.open("POST", url, false);
 xmlhttp.onreadystatechange = function() {
   if (xmlhttp.readyState > 3 && xmlhttp.status == 200) {
 	  success(xmlhttp.responseText);
-	  // console.log(xmlhttp.readyState);
-	  // console.log(xmlhttp.status);
 	  console.log("success");
   }
 };
-//   xmlhttp.setRequestHeader("Content-Type", "application/json");
 xmlhttp.send(JSON.stringify(data));
 return xmlhttp;
 }
