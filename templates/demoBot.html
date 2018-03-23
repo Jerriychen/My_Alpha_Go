@@ -82,9 +82,9 @@
   <script>
         var id = {{uid}};
         var jboard = new JGO.Board(19);
-        var jboard1 = new JGO.Board(19);
+
         var jsetup = new JGO.Setup(jboard, JGO.BOARD.largeWalnut);
-        var jsetup1 = new JGO.Setup(jboard1, JGO.BOARD.largeWalnut);
+
         var player = JGO.BLACK; // next player
         var ko = false,
           lastMove = false; // ko coordinate and last move coordinate
@@ -103,6 +103,10 @@
         }else {
           // alert that this data is missing
         }
+
+        var jboard1 = new JGO.Board(19);
+        var jsetup1 = new JGO.Setup(jboard1, JGO.BOARD.largeWalnut);
+        jsetup1.create('board-show', function(canvas1) {});
   </script>
 
   <script src="{% static "js/qipan.js" %}"></script>

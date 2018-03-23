@@ -1,28 +1,28 @@
 function playMove(coord, player, ko, success, failure) {
-success = success || function() {};
-failure = failure || function() {};
-var play = jboard.playMove(coord, player, ko);
-if (play.success) {
-  jboard.setType(coord, player); // play stone
-  jboard.setType(play.captures, JGO.CLEAR); // clear opponent's stones
+    success = success || function() {};
+    failure = failure || function() {};
+    var play = jboard.playMove(coord, player, ko);
+    if (play.success) {
+      jboard.setType(coord, player); // play stone
+      jboard.setType(play.captures, JGO.CLEAR); // clear opponent's stones
 
-  if (lastMove)
-	jboard.setMark(lastMove, JGO.MARK.NONE); // clear previous mark
-  if (ko)
-	jboard.setMark(ko, JGO.MARK.NONE); // clear previous ko mark
+      if (lastMove)
+        jboard.setMark(lastMove, JGO.MARK.NONE); // clear previous mark
+      if (ko)
+        jboard.setMark(ko, JGO.MARK.NONE); // clear previous ko mark
 
-  jboard.setMark(coord, JGO.MARK.CIRCLE); // mark move
-  lastMove = coord;
+      jboard.setMark(coord, JGO.MARK.CIRCLE); // mark move
+      lastMove = coord;
 
-  if (play.ko)
-	jboard.setMark(play.ko, JGO.MARK.CIRCLE); // mark ko, too
-  ko = play.ko;
-  success(play);
-}
-else {
-  illegalMove(play.errorMsg);
-  failure(play.errorMsg);
-}
+      if (play.ko)
+        jboard.setMark(play.ko, JGO.MARK.CIRCLE); // mark ko, too
+      ko = play.ko;
+      success(play);
+    }
+    else {
+      illegalMove(play.errorMsg);
+      failure(play.errorMsg);
+    }
 }
 
 function illegalMove(errorMsg) {
