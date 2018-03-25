@@ -98,7 +98,7 @@ jsetup.create('board', function(canvas) {
                 boardRaw1 = jboard1.getRaw(); // Use current state (blank) as a template
                 boardRaw1.stones = qipans[j];
                 jboard1.setRaw(boardRaw1); // Set it and forget it
-                }, 100*j);
+                }, 200*j);
                })(i);
         }
 
