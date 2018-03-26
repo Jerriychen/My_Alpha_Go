@@ -123,14 +123,14 @@ div {
   margin-bottom: 100px;
 }
 
-#board {
-  float: left;
+#board1 {
+  float: right;
   margin-left: 4%;
   margin-right:4%;
 }
 
-#board-show {
-  float:right;
+#board2 {
+  float:left;
   margin-left: 4%;
   margin-right:4%;
 }

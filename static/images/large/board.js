@@ -13,29 +13,29 @@ JGO.BOARD.large = {
     },
 
     // Margins around the board, both on normal edges and clipped ones
-    margin: {normal: 30, clipped: 30},
+    margin: {normal: 25, clipped: 25},
 
     // Shadow color, blur and offset
-    boardShadow: {color: '#ffe0a8', blur: 30, offX: 5, offY: 5},
+    boardShadow: {color: '#ffe0a8', blur: 10, offX: 0, offY: 0},
 
     // Lighter border around the board makes it more photorealistic
-    border: {color: 'rgba(255, 255, 255, 0.3)', lineWidth: 2},
+    border: {color: 'rgba(255, 255, 255, 0.3)', lineWidth: 100},
 
     // Amount of "extra wood" around the grid where stones lie
     padding: {normal: 10, clipped: 0},
 
     // Grid color and size, line widths
-    grid: {color: '#202020', x: 40, y: 40, smooth: 0.0,
-        borderWidth: 1.8, lineWidth: 1.5},
+    grid: {color: '#202020', x: 20, y: 20, smooth: 0.0,
+        borderWidth: 0.8, lineWidth: 0.5},
 
     // Star point radiuste
-    stars: {radius: 5},
+    stars: {radius: 1},
 
     // Coordinate color and font
     coordinates: {color: '#808080', font: 'normal 18px sanf-serif'},
 
     // Stone radius  and alpha for semi-transparent stones
-    stone: {radius: 20, dimAlpha:0.5},
+    stone: {radius: 5, dimAlpha:0.1},
 
     // Shadow offset from center
     shadow: {xOff: 0, yOff: 0},
