@@ -14,9 +14,9 @@ var Stones = function(options, images) {
   this.stoneR = options.stone.radius;
   this.gridX = options.grid.x;
   this.gridY = options.grid.x;
-  this.markX = this.stoneR * 1.1;
-  this.markY = this.stoneR * 1.1;
-  this.circleR = this.stoneR * 0.5;
+  this.markX = this.stoneR * 0.2;
+  this.markY = this.stoneR * 0.2;
+  this.circleR = this.stoneR * 0.1;
   this.triangleR = this.stoneR * 0.9;
   this.images = images;
 };

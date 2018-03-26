@@ -6,12 +6,12 @@ body {
   overflow: hidden;
 }
 div {
-  margin: 10px auto;
-  color: #888;
+  margin: auto;
+  color: #100;
 }
 
 .title {
-  margin: 30px 0;
+  margin: 60px 20px;
   color: #cc9772;
   font-size: -webkit-xxx-large;
 }
@@ -20,15 +20,15 @@ div {
   color: #eee;
   background-color: #97522b;
   border-color: #EEE;
-  font-weight: 300;
+  font-weight: 100;
   font-size: 16px;
   font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-decoration: none;
   text-align: center;
   line-height: 40px;
-  height: 40px;
-  padding: 0 40px;
-  margin: 0 80px;
+  height: 10px;
+  padding: 0 0px;
+  margin: 0 0px;
   display: inline-block;
   appearance: none;
   cursor: pointer;
@@ -41,7 +41,7 @@ div {
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
 
-  border-radius: 10px;
+  border-radius: 60px;
 }
 
 #begin_all {
@@ -117,22 +117,22 @@ div {
 }
 
 #board-all {
-  padding-bottom: 1285px;
-  margin-bottom: 20px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 #board {
   float: left;
-  margin-left: 10%;;
+  margin-left: 9%;;
 }
 
 #board-show {
   /*float: left;*/
-  /*margin-left: 10%;*/
-  padding-left: 1500px;
-  width: 1070px;
-  height: 1070px;
+  margin-left: 2%;
+  padding-left: 1300px;
+  width: 1170px;
+  height: 1100px;
 }
 #control {
-  margin-top: 10px;
+  margin-top: 1px;
 }
