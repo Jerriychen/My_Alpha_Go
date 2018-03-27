@@ -59,7 +59,7 @@ stars: {
 });
 
 
-jsetup.create('board', function(canvas) {
+jsetup.create('board1', function(canvas) {
 
   canvas.addListener('click', function(coord, ev) {
   console.log("Attepting human move:");

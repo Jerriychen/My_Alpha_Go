@@ -70,11 +70,11 @@
     </div>
   </div>
 
-  <h1 class="title"> Our Go Game </h1>
+  <h2 class="title"> Our Go Game </h2>
 
     <div id="board-all">
-      <div id="board"></div>
-      <div id="board-show"></div>
+      <div id="board1"></div>
+      <div id="board2"></div>
     </div>
     {% csrf_token %}
   <script src="{% static "js/dist/jgoboard-latest.js" %}"></script>
@@ -82,9 +82,7 @@
   <script>
         var id = {{uid}};
         var jboard = new JGO.Board(19);
-
         var jsetup = new JGO.Setup(jboard, JGO.BOARD.largeWalnut);
-
         var player = JGO.BLACK; // next player
         var ko = false,
           lastMove = false; // ko coordinate and last move coordinate
@@ -92,8 +90,6 @@
           lastX = -1,
           lastY = -1; // hover helper vars
         var boardInit = {{post}};
-        // {#message = json.loads(bo);#}
-        // Check for embedded game data
         if (boardInit){
           // Set the board
           var boardRaw = jboard.getRaw(); // Use current state (blank) as a template
@@ -105,7 +101,7 @@
 
         var jboard1 = new JGO.Board(19);
         var jsetup1 = new JGO.Setup(jboard1, JGO.BOARD.largeWalnut);
-        jsetup1.create('board-show', function(canvas1) {});
+        jsetup1.create('board2', function(canvas1) {});
   </script>
 
   <script src="{% static "js/qipan.js" %}"></script>
