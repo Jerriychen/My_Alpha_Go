@@ -50,4 +50,4 @@ exports.MARK = {
  * Board coordinate array.
  * @constant
  */
-exports.COORDINATES = 'ABCDEFGHJKLMNOPQRSTUVWXYZ'.split('');
+exports.COORDINATES = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');

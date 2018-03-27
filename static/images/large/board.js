@@ -29,10 +29,10 @@ JGO.BOARD.large = {
         borderWidth: 1.5, lineWidth: 1.5},
 
     // Star point radiuste
-    stars: {radius: 1},
+    stars: {radius: 3},
 
     // Coordinate color and font
-    coordinates: {color: '#808080', font: 'normal 18px sanf-serif'},
+    coordinates: {color: '#808080', font: 'normal 9px sanf-serif'},
 
     // Stone radius  and alpha for semi-transparent stones
     stone: {radius: 5, dimAlpha:0.1},
