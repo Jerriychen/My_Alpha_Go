@@ -101,15 +101,15 @@
   color: #fff;
   background-color: #c47537;
   border-color: #EEE;
-  font-weight: 300;
-  font-size: 28px;
+  font-weight: 150;
+  font-size: 15px;
   font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-decoration: blink;
   text-align: center;
-  line-height: 40px;
-  height: 45px;
-  padding: 0 50px;
-  margin: 0 5%;
+  line-height: 10px;
+  height: auto;
+  padding: 8px 25px;
+  margin: 5% 4%;
   display: inline-block;
   appearance: none;
   cursor: pointer;
@@ -121,6 +121,7 @@
   transition-property: all;
   -webkit-transition-duration: .3s;
   transition-duration: .3s;
+  border-radius: 20px;
   /*
   * Disabled State
   *

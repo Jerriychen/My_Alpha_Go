@@ -2,8 +2,8 @@
 body {
   text-align: center;
   background-image: url("/static/images/large/backend.png");
-  background-repeat: repeat-y;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  overflow: visible;
 }
 div {
   margin: auto;
@@ -11,24 +11,24 @@ div {
 }
 
 .title {
-  margin: 60px 30px;
+  margin: 40px 35px;
   color: #cc9772;
-  font-size: -webkit-xxx-large;
+  font-size: -webkit-xxx-medium;
 }
 
 .button {
   color: #eee;
   background-color: #97522b;
   border-color: #EEE;
-  font-weight: 100px;
-  font-size: 85px;
+  font-weight: 150;
+  font-size: 15px;
   font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-decoration: none;
   text-align: center;
-  line-height: 40px;
+  line-height: 10px;
   height: 20px;
-  padding: 0 0px;
-  margin: 0 0px;
+  padding: 8px 25px;
+  margin: 5% 4%;
   display: inline-block;
   appearance: none;
   cursor: pointer;
@@ -40,8 +40,6 @@ div {
           transition-property: all;
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
-
-  border-radius: 60px;
 }
 
 #begin_all {
@@ -66,7 +64,7 @@ div {
   margin: -40px 0;
   z-index: 900;
   width: 99%;
-  height: 130%;
+  height: 100%;
 }
 
 #suspend {
@@ -120,7 +118,7 @@ div {
   width: 90%;
   height: 90%;
   padding-bottom: 0px;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
 }
 
 #board1 {
@@ -135,5 +133,5 @@ div {
   margin-right:4%;
 }
 #control {
-  margin-top: 100px;
+  margin-top: 120px;
 }

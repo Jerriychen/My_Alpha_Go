@@ -19,14 +19,14 @@ JGO.BOARD.large = {
     boardShadow: {color: '#ffe0a8', blur: 10, offX: 0, offY: 0},
 
     // Lighter border around the board makes it more photorealistic
-    border: {color: 'rgba(255, 255, 255, 0.3)', lineWidth: 100},
+    border: {color: 'rgba(255, 255, 255, 50.3)', lineWidth: 0},
 
     // Amount of "extra wood" around the grid where stones lie
-    padding: {normal: 10, clipped: 0},
+    padding: {normal: 5, clipped: 10},
 
     // Grid color and size, line widths
-    grid: {color: '#202020', x: 20, y: 20, smooth: 0.0,
-        borderWidth: 0.8, lineWidth: 0.5},
+    grid: {color: '#202020', x: 21, y: 21, smooth: 0.0,
+        borderWidth: 1.5, lineWidth: 1.5},
 
     // Star point radiuste
     stars: {radius: 1},
