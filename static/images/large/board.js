@@ -16,17 +16,17 @@ JGO.BOARD.large = {
     margin: {normal: 25, clipped: 25},
 
     // Shadow color, blur and offset
-    boardShadow: {color: '#ffe0a8', blur: 10, offX: 0, offY: 0},
+    boardShadow: {color: '#ffe0a8', blur: 20, offX: 0, offY: 0},
 
     // Lighter border around the board makes it more photorealistic
-    border: {color: 'rgba(255, 255, 255, 50.3)', lineWidth: 0},
+    border: {color: 'rgba(255, 255, 255, 0)', lineWidth: 0},
 
     // Amount of "extra wood" around the grid where stones lie
     padding: {normal: 5, clipped: 10},
 
     // Grid color and size, line widths
     grid: {color: '#202020', x: 21, y: 21, smooth: 0.0,
-        borderWidth: 1.5, lineWidth: 1.5},
+        borderWidth: 1.5, lineWidth: 0.5},
 
     // Star point radiuste
     stars: {radius: 3},
@@ -48,7 +48,7 @@ JGO.BOARD.large = {
 JGO.BOARD.largeWalnut = JGO.util.extend(JGO.util.extend({}, JGO.BOARD.large), {
     textures: {board: '/static/images/large/walnut.jpg', shadow: '/static/images/large/shadow_dark.png'},
     boardShadow: {color: '#e2baa0'},
-    grid: {color: '#101010', borderWidth:0.5, lineWidth: 0.5}
+    grid: {color: '#101010', borderWidth:1.5, lineWidth: 0.5}
 });
 
 JGO.BOARD.largeBW = JGO.util.extend(JGO.util.extend({}, JGO.BOARD.large), {
