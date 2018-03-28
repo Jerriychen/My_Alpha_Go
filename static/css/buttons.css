@@ -98,15 +98,15 @@
 * The default values for the .button class
 */
 .button {
-  color: #fff;
+  color: #eee;
   background-color: #c47537;
-  border-color: #EEE;
-  font-weight: 150;
+  border-color: #eee;
+  font-weight: 80;
   font-size: 15px;
-  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue","Helvetica Neue Light",  "Helvetica, Arial", "Lucida Grande", "sans-serif";
   text-decoration: blink;
   text-align: center;
-  line-height: 10px;
+  line-height: auto;
   height: auto;
   padding: 8px 25px;
   margin: 5% 4%;
