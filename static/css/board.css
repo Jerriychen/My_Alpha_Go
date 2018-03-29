@@ -4,11 +4,12 @@ body {
   background-image: url("/static/images/large/backend.png");
   background-repeat: no-repeat;
   overflow: visible;
-  background-size:40% 100%;
+  background-size:auto 100%;
 }
+
 div {
   margin: auto;
-  color: #100;
+  color: #800;
 }
 
 .title {
