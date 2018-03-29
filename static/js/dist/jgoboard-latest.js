@@ -147,23 +147,17 @@ var Board = function(width, height) {
   this.stones = [];
   this.marks = [];
 
-  // change_sun: 增加概率属性（probalities）,初始化为零
-  this.probalities = [];
-
   // Initialize stones and marks
   for(var i=0; i<this.width; ++i) {
-    var stoneArr = [], markArr = [], probArr = [];
+    var stoneArr = [], markArr = [];
 
     for(var j=0; j<this.height; ++j) {
       stoneArr.push(C.CLEAR);
       markArr.push(C.MARK.NONE);
-      // probArr.push(C.CLEAR);
-      probArr.push(C.CLEAR);
     }
 
     this.stones.push(stoneArr);
     this.marks.push(markArr);
-    this.probalities.push(probArr);
   }
 };
 
@@ -230,21 +224,6 @@ Board.prototype.each = function(func, i1, j1, i2, j2) {
   for(c.j=j1; c.j<=j2; c.j++)
     for(c.i=i1; c.i<=i2; c.i++)
       func(c.copy(), this.stones[c.i][c.j], this.marks[c.i][c.j]);
-};
-
-
-// change_sun： Board遍历的原型函数，专门为后面用概率控制透明度的函数写的（Board.prototype.eachP函数）
-Board.prototype.eachP = function(func, i1, j1, i2, j2) {
-  var c = new Coordinate();
-
-  if(i1 === undefined) i1 = 0;
-  if(j1 === undefined) j1 = 0;
-  if(i2 === undefined) i2 = this.width-1;
-  if(j2 === undefined) j2 = this.height-1;
-
-  for(c.j=j1; c.j<=j2; c.j++)
-    for(c.i=i1; c.i<=i2; c.i++)
-      func(c.copy(), this.probalities[c.i][c.j], this.marks[c.i][c.j]);
 };
 
 /**
@@ -940,31 +919,6 @@ Canvas.prototype.draw = function(jboard, i1, j1, i2, j2) {
 
     if(mark) this.stones.drawMark(this.ctx, mark, ox, oy);
   }.bind(this), i1, j1, i2, j2); // provide iteration limits
-
-  // change_sun： 用概率控制透明度（eachP函数）
-  jboard.eachP(function(c, probs, mark) {
-    var ox = (this.getX(c.i - this.opt.view.xOffset));
-    var oy = (this.getY(c.j - this.opt.view.yOffset));
-    var markColor;
-
-
-    this.ctx.globalAlpha = this.opt.stone.dimAlpha * probs;
-    this.stones.drawStone(this.ctx, C.WHITE, ox, oy);
-    markColor = this.opt.mark.whiteColor; // if we have marks, this is the
-
-    // Common settings to all markers
-    this.ctx.lineWidth = this.opt.mark.lineWidth;
-    this.ctx.strokeStyle = markColor;
-
-    this.ctx.font = this.opt.mark.font;
-    this.ctx.fillStyle = markColor;
-    this.ctx.textAlign = 'center';
-    this.ctx.textBaseline = 'middle';
-
-    if (mark) this.stones.drawMark(this.ctx, mark, ox, oy);
-
-  }.bind(this), i1, j1, i2, j2); // provide iteration limits
-
 
   this.ctx.restore(); // also restores globalAlpha
 };
