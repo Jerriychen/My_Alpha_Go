@@ -188,7 +188,7 @@ class KerasBot(GoModel):
             t = []
             t.append(pred_row)
             t.append(pred_col)
-            t.append(pred[prediction])
+            t.append(round(pred[prediction],4))                 #保留概率3为小数，太多的话，json.dump会出错
             self.top_n_probability.append(t)
 
 

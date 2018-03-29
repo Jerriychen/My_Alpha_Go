@@ -14,10 +14,10 @@ var Stones = function(options, images) {
   this.stoneR = options.stone.radius;
   this.gridX = options.grid.x;
   this.gridY = options.grid.x;
-  this.markX = this.stoneR * 200;
-  this.markY = this.stoneR * 0.2;
-  this.circleR = this.stoneR * 0.01;
-  this.triangleR = this.stoneR * 0.4;
+  this.markX = this.stoneR * 1.1;
+  this.markY = this.stoneR * 1.1;
+  this.circleR = this.stoneR * 0.5;
+  this.triangleR = this.stoneR * 0.9;
   this.images = images;
 };
 
@@ -40,8 +40,8 @@ Stones.prototype.drawStone = function(ctx, type, ox, oy, scale) {
   else {
     // round x, y for crisp rendering
     ctx.drawImage(stone, 0, 0, stone.width, stone.height,
-        Math.round(ox - stone.width / 4 * scale),
-        Math.round(oy - stone.height / 4 * scale),
+        Math.round(ox - stone.width / 2 * scale),
+        Math.round(oy - stone.height / 2 * scale),
         stone.width * scale, stone.height * scale);
   }
 };
@@ -52,8 +52,8 @@ Stones.prototype.drawShadow = function(ctx, ox, oy, scale) {
   if(!scale) scale = 1;
 
   ctx.drawImage(shadow, 0, 0, shadow.width, shadow.height,
-      Math.round(ox - shadow.width / 4 * scale),
-      Math.round(oy - shadow.height / 4 * scale),
+      Math.round(ox - shadow.width / 2 * scale),
+      Math.round(oy - shadow.height / 2 * scale),
       shadow.width * scale, shadow.height * scale);
 };
 
