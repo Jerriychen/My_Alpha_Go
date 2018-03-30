@@ -26,17 +26,22 @@ var Board = function(width, height) {
   this.stones = [];
   this.marks = [];
 
+  // change_sun: 增加概率属性（probalities）,初始化为零
+  this.probalities = [];
+
   // Initialize stones and marks
   for(var i=0; i<this.width; ++i) {
-    var stoneArr = [], markArr = [];
+    var stoneArr = [], markArr = [], probArr = [];
 
     for(var j=0; j<this.height; ++j) {
       stoneArr.push(C.CLEAR);
       markArr.push(C.MARK.NONE);
+      probArr.push(C.CLEAR);
     }
 
     this.stones.push(stoneArr);
     this.marks.push(markArr);
+    this.probalities.push(probArr);
   }
 };
 
@@ -99,10 +104,27 @@ Board.prototype.each = function(func, i1, j1, i2, j2) {
   if(j1 === undefined) j1 = 0;
   if(i2 === undefined) i2 = this.width-1;
   if(j2 === undefined) j2 = this.height-1;
-
+  console.log("看这里2");
+  console.log(this.probalities);
   for(c.j=j1; c.j<=j2; c.j++)
     for(c.i=i1; c.i<=i2; c.i++)
       func(c.copy(), this.stones[c.i][c.j], this.marks[c.i][c.j]);
+};
+
+
+Board.prototype.eachP = function(func, i1, j1, i2, j2) {
+  var c = new Coordinate();
+
+  if(i1 === undefined) i1 = 0;
+  if(j1 === undefined) j1 = 0;
+  if(i2 === undefined) i2 = this.width-1;
+  if(j2 === undefined) j2 = this.height-1;
+  console.log("看这里1");
+   console.log(this.probalities);
+  for(c.j=j1; c.j<=j2; c.j++)
+    for(c.i=i1; c.i<=i2; c.i++){
+        func(c.copy(), this.probalities[c.i][c.j], this.marks[c.i][c.j]);
+    }
 };
 
 /**
@@ -291,10 +313,11 @@ Board.prototype.getGroup = function(coord, overrideType) {
  */
 Board.prototype.getRaw = function() {
   return {
-    width: this.width,
+      width: this.width,
       height: this.height,
       stones: util.extend({}, this.stones),
-      marks: util.extend({}, this.marks)
+      marks: util.extend({}, this.marks),
+      probalities:util.extend({},this.probalities)
   };
 };
 
@@ -308,6 +331,7 @@ Board.prototype.setRaw = function(raw) {
   this.height = raw.height;
   this.stones = raw.stones;
   this.marks = raw.marks;
+  this.probalities = raw.probalities;
 };
 
 /**

@@ -157,7 +157,6 @@ var Board = function(width, height) {
     for(var j=0; j<this.height; ++j) {
       stoneArr.push(C.CLEAR);
       markArr.push(C.MARK.NONE);
-      // probArr.push(C.CLEAR);
       probArr.push(C.CLEAR);
     }
 
@@ -243,8 +242,10 @@ Board.prototype.eachP = function(func, i1, j1, i2, j2) {
   if(j2 === undefined) j2 = this.height-1;
 
   for(c.j=j1; c.j<=j2; c.j++)
-    for(c.i=i1; c.i<=i2; c.i++)
-      func(c.copy(), this.probalities[c.i][c.j], this.marks[c.i][c.j]);
+    for(c.i=i1; c.i<=i2; c.i++){
+        func(c.copy(), this.probalities[c.i][c.j], this.marks[c.i][c.j]);
+    }
+
 };
 
 
@@ -437,7 +438,8 @@ Board.prototype.getRaw = function() {
     width: this.width,
       height: this.height,
       stones: util.extend({}, this.stones),
-      marks: util.extend({}, this.marks)
+      marks: util.extend({}, this.marks),
+      probalities:util.extend({},this.probalities)
   };
 };
 
@@ -451,6 +453,7 @@ Board.prototype.setRaw = function(raw) {
   this.height = raw.height;
   this.stones = raw.stones;
   this.marks = raw.marks;
+  this.probalities = raw.probalities;
 };
 
 /**
@@ -911,7 +914,6 @@ Canvas.prototype.draw = function(jboard, i1, j1, i2, j2) {
     var ox = (this.getX(c.i - this.opt.view.xOffset));
     var oy = (this.getY(c.j - this.opt.view.yOffset));
     var markColor;
-
     switch(type) {
       case C.BLACK:
       case C.DIM_BLACK:
@@ -945,13 +947,12 @@ Canvas.prototype.draw = function(jboard, i1, j1, i2, j2) {
 
 
   // change_sun： 用概率控制透明度（eachP函数）
-  jboard.eachP(function(c, probs, mark) {
+  jboard.eachP(function(c, probalities, mark) {
     var ox = (this.getX(c.i - this.opt.view.xOffset));
     var oy = (this.getY(c.j - this.opt.view.yOffset));
     var markColor;
 
-
-    this.ctx.globalAlpha = this.opt.stone.dimAlpha * probs;
+    this.ctx.globalAlpha = this.opt.stone.dimAlpha * probalities*10;
     this.stones.drawStone(this.ctx, C.WHITE, ox, oy);
     markColor = this.opt.mark.whiteColor; // if we have marks, this is the
 
@@ -1611,15 +1612,10 @@ Setup.prototype.getNotifier = function() {
  */
 Setup.prototype.create = function(elemId, readyFn) {
   if (this.canvas == null) {
-      console.log(" setup in");
         var options = util.extend({}, this.options); // create a copy
-
         var createCallback = function (images) {
             var jcanvas = new Canvas(elemId, options, images);
-
             this.canvas = jcanvas;
-            console.log("canvas:" + this.canvas);
-
             jcanvas.draw(this.board, 0, 0, this.board.width - 1, this.board.height - 1);
 
             // Track and group later changes with Notifier
@@ -1639,7 +1635,6 @@ Setup.prototype.create = function(elemId, readyFn) {
         var createCallback = function (images, FlagCanvas) {
             // var jcanvas = new Canvas(elemId, options, images);
             var jcanvas = this.canvas;
-            console.log("canvas:" + this.canvas);
             jcanvas.draw(this.board, 0, 0, this.board.width - 1, this.board.height - 1);
 
             // Track and group later changes with Notifier
