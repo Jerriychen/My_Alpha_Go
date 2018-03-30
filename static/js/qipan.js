@@ -90,10 +90,9 @@ jsetup.create('board1', function(canvas) {
 		coord.i = botcoord.i;
 		coord.j = botcoord.j;
         qipans = botcoord.q; // Add in our stone data
-        probability = botcoord.p;
-        jboard.probability = botcoord.p;
-
-
+        jboard.probalities = botcoord.p;                  //这里概率可以传过来
+        //boardRaw = jboard.getRaw();                 // Use current state (blank) as a template
+        //jboard.setRaw(boardRaw);
         for (var i = 0; i < 10; i++) {
              (function(j) { // j = i
                 setTimeout(function() {

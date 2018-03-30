@@ -185,7 +185,7 @@ class KerasBot(GoModel):
             for col in range(19):
                 prediction = 19 * row + col
                 if prediction in top_n_pred_idx:
-                    t.append(round(pred[prediction], 4))  # 保留概率3为小数，太多的话，json.dump会出错
+                    t.append(round(pred[prediction], 4))  # 保留概率 4位小数，太多的话，json.dump会出错
                 else:
                     t.append(0)
             self.top_n_probability.append(t)
