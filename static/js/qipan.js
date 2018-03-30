@@ -91,6 +91,8 @@ jsetup.create('board1', function(canvas) {
 		coord.j = botcoord.j;
         qipans = botcoord.q; // Add in our stone data
         probability = botcoord.p;
+        console.log("prob:");
+        console.log(probability);
         for (var i = 0; i < 10; i++) {
              (function(j) { // j = i
                 setTimeout(function() {

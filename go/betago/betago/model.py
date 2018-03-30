@@ -180,15 +180,17 @@ class KerasBot(GoModel):
         top_n_pred_idx = pred.argsort()[-self.top_n:][::-1]  #这里电脑可以产生10个下期的位置
         self.top_n_probability = []
 
-        for idx in top_n_pred_idx:
+        for idx  in range(361):
             prediction = int(idx)
             pred_row = prediction // 19
             pred_col = prediction % 19
-            pred_move = (pred_row, pred_col)
             t = []
             t.append(pred_row)
             t.append(pred_col)
-            t.append(round(pred[prediction],4))                 #保留概率3为小数，太多的话，json.dump会出错
+            if idx in top_n_pred_idx:
+                t.append(round(pred[prediction], 4))  # 保留概率3为小数，太多的话，json.dump会出错
+            else:
+                t.append(0)
             self.top_n_probability.append(t)
 
 
