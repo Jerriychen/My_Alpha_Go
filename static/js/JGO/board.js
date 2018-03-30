@@ -26,17 +26,23 @@ var Board = function(width, height) {
   this.stones = [];
   this.marks = [];
 
+  // change_sun: 增加概率属性（probalities）,初始化为零
+  this.probalities = [];
+
   // Initialize stones and marks
   for(var i=0; i<this.width; ++i) {
-    var stoneArr = [], markArr = [];
+    var stoneArr = [], markArr = [], probArr = [];
 
     for(var j=0; j<this.height; ++j) {
       stoneArr.push(C.CLEAR);
       markArr.push(C.MARK.NONE);
+      // probArr.push(C.CLEAR);
+      probArr.push(C.CLEAR);
     }
 
     this.stones.push(stoneArr);
     this.marks.push(markArr);
+    this.probalities.push(probArr);
   }
 };
 
