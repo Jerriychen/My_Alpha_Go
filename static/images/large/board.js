@@ -19,10 +19,10 @@ JGO.BOARD.large = {
     boardShadow: {color: '#ffe0a8', blur: 30, offX: 5, offY: 5},   //blur 设置棋盘阴影的
 
     // Lighter border around the board makes it more photorealistic
-    border: {color: 'rgba(255, 255, 255, 0)', lineWidth: 2},
+    border: {color: 'rgba(255, 255, 255, 0.3)', lineWidth: 2},
 
     // Amount of "extra wood" around the grid where stones lie
-    padding: {normal: 5, clipped: 10},
+    padding: {normal: 10, clipped: 10},
 
     // Grid color and size, line widths
     grid: {color: '#202020', x: 21, y: 21, smooth: 0.0,                     //设置棋盘的大小
@@ -35,10 +35,10 @@ JGO.BOARD.large = {
     coordinates: {color: '#808080', font: 'normal 10px sanf-serif'},
 
     // Stone radius  and alpha for semi-transparent stones
-    stone: {radius: 8, dimAlpha:0.6},                       //棋盘上棋子中间那个白圈子的大小
+    stone: {radius: 8, dimAlpha:1},                       //棋盘上棋子中间那个白圈子的大小
 
     // Shadow offset from center
-    shadow: {xOff: -2, yOff:2},
+    shadow: {xOff: 0, yOff:0},
 
     // Mark base size and line width, color and font settings
     mark: {lineWidth: 1.5, blackColor: 'white', whiteColor: 'black',
