@@ -94,6 +94,8 @@ class My_Go(object):
                     board_row[col] = int(cell)
                 board[row] = board_row
             my_10_board[count]=board
+        print("后端:")
+        print(self.bots[id].top_n_probability)
         result = {'i': bot_col, 'j': bot_row,'q':my_10_board,'p':self.bots[id].top_n_probability}
         return HttpResponse(json.dumps(result))
 

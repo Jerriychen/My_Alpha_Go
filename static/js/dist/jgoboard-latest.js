@@ -952,6 +952,11 @@ Canvas.prototype.draw = function(jboard, i1, j1, i2, j2) {
     var oy = (this.getY(c.j - this.opt.view.yOffset));
     var markColor;
 
+    if(probalities!=0){
+        console.log("概率是:");
+        console.log(probalities);
+    }
+
     this.ctx.globalAlpha = this.opt.stone.dimAlpha * probalities*10;
     this.stones.drawStone(this.ctx, C.WHITE, ox, oy);
     markColor = this.opt.mark.whiteColor; // if we have marks, this is the
