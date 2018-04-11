@@ -4,7 +4,7 @@ body {
   background-image: url("/static/images/large/backend.png");
   background-repeat: no-repeat;
   overflow: visible;
-  background-size:auto 100%;
+  background-size:40% 100%;
 }
 
 div {
