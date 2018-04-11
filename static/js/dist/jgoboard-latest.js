@@ -245,7 +245,6 @@ Board.prototype.eachP = function(func, i1, j1, i2, j2) {
     for(c.i=i1; c.i<=i2; c.i++){
         func(c.copy(), this.probalities[c.i][c.j], this.marks[c.i][c.j]);
     }
-
 };
 
 
@@ -842,10 +841,10 @@ Canvas.prototype.getY = function(j) {
  * @param {number} j2 Ending row to be redrawn (inclusive).
  */
 Canvas.prototype.draw = function(jboard, i1, j1, i2, j2) {
-  i1 = Math.max(i1, this.opt.view.xOffset);
-  j1 = Math.max(j1, this.opt.view.yOffset);
-  i2 = Math.min(i2, this.opt.view.xOffset + this.opt.view.width - 1);
-  j2 = Math.min(j2, this.opt.view.yOffset + this.opt.view.height - 1);
+  i1 = Math.max(-1, this.opt.view.xOffset);
+  j1 = Math.max(-1, this.opt.view.yOffset);
+  i2 = Math.min(21, this.opt.view.xOffset + this.opt.view.width - 1);
+  j2 = Math.min(21, this.opt.view.yOffset + this.opt.view.height - 1);
 
   if(i2 < i1 || j2 < j1)
     return; // nothing to do here
