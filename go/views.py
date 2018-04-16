@@ -75,21 +75,28 @@ class My_Go(object):
         my_10_board={}
         for count in range(10):
             board = {}
+            black = 0
+            white = 0
             for row in range(19):
                 board_row = {}
                 for col in range(19):
                     cell = str(self.bots[id].go_board.board.get((col, row)))
-                    if np.random.random()>0.98:
-                        cell = cell.replace('None','1')
-                    else:
-                        cell = cell.replace('None', '0')
-                    if np.random.random()>0.95:
-                        cell = cell.replace('b','2')
-                    else:
-                        cell = cell.replace('b', '1')
-                    if np.random.random()>0.95:
+                    a = np.random.random()
+                    if a>0.98:
+                        if a > 0.99:
+                            if white>black:
+                                cell = cell.replace('None', '1')
+                                black += 1
+                            else:
+                                cell = cell.replace('None', '2')
+                                white += 1
+                        else:
+                            cell = cell.replace('None', '0')
+                        cell = cell.replace('b', '2')
                         cell = cell.replace('w', '1')
                     else:
+                        cell = cell.replace('None', '0')
+                        cell = cell.replace('b', '1')
                         cell = cell.replace('w', '2')
                     board_row[col] = int(cell)
                 board[row] = board_row
